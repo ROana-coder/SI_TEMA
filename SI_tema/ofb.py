@@ -48,18 +48,21 @@ class OFB:
         for block in ciphertext:
             self.vi1 = _xor(self.vi, self.key)
             block = str(block)
-            block = block[2:len(block)-1]
-            print(block)
+            #block = block[2:len(block)-1]
+            #print(block)
             plaintext[n] = _xor(str(block), self.vi1)
             self.vi = rotate_to_left(self.vi, self.vi1, self.j)
             n += 1
         return plaintext
 
 
-#iv = '0102030405060708AABBCCDDEEFF'
-#K1 = 'Olmv5OmjCqwhrMMFA_fa-PhUPLBVBnxAfxJiZrFmP3k='
-#ofb = OFB(iv, K1, 10)
-#cipher = ofb.encrypt("ana are mere jsda djasdg hjsdadvhje hjdiuaaebddeiagdagdyv dyegdad")
-#print(cipher)
-#print(ofb.decrypt(cipher))
+
+
+iv = '0102030405060708AABBCCDDEEFF'
+K1 = 'Olmv5OmjCqwhrMMFA_fa-PhUPLBVBnxAfxJiZrFmP3k='
+
+ofb = OFB(iv, K1, 10)
+cipher = ofb.encrypt("ana are mere jsda djasdg hjsdadvhje hjdiuaaebddeiagdagdyv dyegdad")
+print(cipher)
+print(ofb.decrypt(cipher))
 

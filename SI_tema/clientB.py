@@ -14,7 +14,7 @@ PORT = 1234
 my_username = "Username: B"
 
 iv = '0102030405060708AABBCCDDEEFF'
-K1 = 'Olmv5OmjCqwhrMMFA_fa-PhUPLBVBnxAfxJiZrFmP3k='
+K1 = str('Olmv5OmjCqwhrMMFA_fa-PhUPLBVBnxAfxJiZrFmP3k=')
 encrypt = Encrypt(K1)
 # Create a socket
 # socket.AF_INET - address family, IPv4, some otehr possible are AF_INET6, AF_BLUETOOTH, AF_UNIX
